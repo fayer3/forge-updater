@@ -20,4 +20,4 @@ runs:
   steps:
     - name: update
       shell: bash
-      run: bash ${{ github.action_path }}/update.sh "${{ inputs.json_file }}" "${{ inputs.mc_range }}" "${{ inputs.new_version }}" "${{ inputs.yp }}"
+      run: bash ${{ github.action_path }}/update.sh "${{ inputs.json_file }}" "${{ inputs.mc_range }}" "${{ inputs.new_version }}" "${{ inputs.type }}"
