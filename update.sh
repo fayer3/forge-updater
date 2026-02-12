@@ -2,6 +2,8 @@
 
 set -e
 
+echo "$@"
+
 json_file="$1"
 mc_version_range="$2"
 mod_version="$3"
