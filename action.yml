@@ -1,0 +1,23 @@
+name: update forge json
+description: updates a forge release json at the given path with new versions  
+
+inputs:
+  json_file:
+    description: path to the forge json file
+    required: true
+  mc_range:
+    description: mc version range in the format "[from,to]", to is optional
+    required: true
+  new_version:
+    description: new mod version ot set for the mc versions
+    required: true
+  type:
+    description: type of the new version, if it is "release" it is set to recommended
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: update
+      shell: bash
+      run: bash ${{ github.action_path }}/update.sh "${{ inputs.json_file }}" "${{ inputs.mc_range }}" "${{ inputs.new_version }}" "${{ inputs.yp }}"
